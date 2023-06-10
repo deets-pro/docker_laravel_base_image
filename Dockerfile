@@ -9,6 +9,7 @@ WORKDIR /var/www/html
 
 
 # Install dependencies
+RUN curl -s https://deb.nodesource.com/setup_16.x | sh
 RUN apt-get update && apt-get install -y \
     build-essential apt-utils \
     libpng-dev libjpeg62-turbo-dev libwebp-dev libfreetype6-dev \
