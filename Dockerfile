@@ -40,9 +40,9 @@ RUN docker-php-ext-install intl
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
 # Add user for laravel application
-RUN groupadd -g 1000 laravel
-RUN useradd -u laravel -ms /bin/bash -g laravel laravel
-RUN chown -R laravel:laravel /var/www/html
+RUN groupadd -g 1000 www
+RUN useradd -u 1000 -ms /bin/bash -g www www
+RUN chown -R www:www /var/www/html
 RUN chmod -R 755 /var/www/html
-USER laravel
+USER www
 WORKDIR /var/www/html
